@@ -1,0 +1,13 @@
+# Copy to ~/.config/telegrom-mcp/config.toml
+# Chats: numeric id (e.g. -1001234567890) or "@username".
+
+# Never readable, never writable. Always wins.
+deny = ["@bank_bot", "@BotFather"]
+
+[read]
+# Empty = read every chat except denied. Non-empty = only these.
+allow = []
+
+[send]
+# Empty = sending disabled. Only these chats can be written to.
+allow = ["@my_notes_channel"]
