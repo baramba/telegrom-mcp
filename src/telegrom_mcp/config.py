@@ -45,6 +45,7 @@ def load_settings() -> Settings:
         api_hash = os.environ["TELEGRAM_API_HASH"]
     except KeyError as exc:
         raise SystemExit(f"Environment variable {exc.args[0]} is required") from exc
+    os.umask(0o077)  # session files must never be group/world readable
     CONFIG_DIR.mkdir(mode=0o700, parents=True, exist_ok=True)
     return Settings(
         api_id=api_id,
