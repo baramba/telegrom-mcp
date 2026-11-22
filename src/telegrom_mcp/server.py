@@ -71,4 +71,5 @@ async def send_message(chat: str, text: str, reply_to: int | None = None) -> dic
 
 
 def main() -> None:
+    load_settings()  # fail fast: clean error if TELEGRAM_API_ID/API_HASH are missing
     mcp.run("stdio")
